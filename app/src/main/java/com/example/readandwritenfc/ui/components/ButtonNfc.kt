@@ -21,9 +21,15 @@ fun PreviewButtonNfc() {
 }
 
 @Composable
-fun ButtonNfc(text: String, modifier: Modifier, onClick: () -> Unit = {}) {
+fun ButtonNfc(
+    modifier: Modifier = Modifier,
+    text: String,
+    onClick: () -> Unit = {}
+) {
     OutlinedButton(
-        modifier = modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 8.dp),
+        modifier = modifier
+            .fillMaxWidth()
+            .padding(horizontal = 16.dp, vertical = 8.dp),
         onClick = { onClick() }) {
         Text(text = text, fontSize = 16.sp, fontWeight = FontWeight.ExtraBold)
     }

@@ -1,5 +1,7 @@
 package com.example.readandwritenfc.ui.components
 
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -9,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
 fun BasicDialog(
@@ -47,4 +50,16 @@ fun BasicDialog(
                 )
             }
         })
+}
+
+@Preview
+@Composable
+fun BasicDialogPreview() {
+    BasicDialog(
+        title = "Title",
+        message = "Message",
+        icon = Icons.Outlined.Info,
+        textConfirm = "Confirm",
+        onConfirm = {}
+    )
 }

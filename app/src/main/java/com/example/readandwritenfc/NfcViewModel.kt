@@ -6,6 +6,9 @@ import androidx.lifecycle.ViewModel
 
 class NfcViewModel : ViewModel() {
 
+    private val _showLoadingDialog = MutableLiveData(false)
+    val showLoadingDialog: LiveData<Boolean> get() = _showLoadingDialog
+
     private val _isWriteNfc = MutableLiveData(false)
     val isWriteNfc: LiveData<Boolean> get() = _isWriteNfc
 
@@ -25,5 +28,11 @@ class NfcViewModel : ViewModel() {
 
     fun updateIsWriteNfc(isWriteNfc: Boolean) {
         _isWriteNfc.value = isWriteNfc
+        _textId.value = ""
+        _textName.value = ""
+    }
+
+    fun updateShowLoadingDialog(showLoadingDialog: Boolean) {
+        _showLoadingDialog.value = showLoadingDialog
     }
 }
